@@ -74,7 +74,7 @@ class ReviewFragment : Fragment() {
             }
         }
 
-        backButton.setOnClickListener{view: View ->
+        backButton.setOnClickListener{
             val fragment = FruitFragment.newInstance()
             val fm = activity?.supportFragmentManager
             if (fm != null) {

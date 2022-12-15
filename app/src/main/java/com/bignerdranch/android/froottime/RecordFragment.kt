@@ -25,6 +25,21 @@ class RecordFragment : Fragment() {
     }
     override fun onStart() {
         super.onStart()
+
+        backButton.setOnClickListener{
+            val fragment = FruitFragment.newInstance()
+            val fm = activity?.supportFragmentManager
+            if (fm != null) {
+                fm.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit()
+            }
+        }
+
+        recordButton.setOnClickListener{
+            //TODO what happens when hit record???
+            //after get set frequency, stop that, toast to screen like in the quiz (good!, bad!, still recording...)
+        }
     }
     //TODO this is where you hookup the microphone
     //TODO when get frequency, set fruit frequency to read value: once set, print set to screen, return to FruitFragment
