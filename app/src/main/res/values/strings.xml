@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FrootTime</string>
+    <string name="record_label">Record</string>
+    <string name="review_label">Review</string>
+    <string name="tooSweet_label">Too Sweet</string>
+    <string name="tooSoft_label">Too Soft</string>
+    <string name="tooBitter_label">Too Bitter</string>
+    <string name="tooCrunchy_label">Too Crunchy</string>
+    <string name="perfect_label">PERFECT!</string>
+    <string name="back_label">BACK</string>
+</resources>
