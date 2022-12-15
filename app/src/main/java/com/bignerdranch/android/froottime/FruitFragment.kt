@@ -47,7 +47,7 @@ class FruitFragment : Fragment() {
         }
 
         reviewButton.setOnClickListener {
-            val fragment = RecordFragment.newInstance()
+            val fragment = ReviewFragment.newInstance()
             val fm = activity?.supportFragmentManager
             if (fm != null) {
                 fm.beginTransaction()
