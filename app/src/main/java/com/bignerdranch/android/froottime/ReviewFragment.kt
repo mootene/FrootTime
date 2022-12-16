@@ -49,28 +49,28 @@ class ReviewFragment : Fragment() {
         tooSweet.apply {
             setOnCheckedChangeListener {_, isChecked ->
                 fruit.tooSweet = isChecked
-                //TODO update target
+                //TODO update target, new frequency +10 is new low value
             }
         }
 
         tooBitter.apply {
             setOnCheckedChangeListener {_, isChecked ->
                 fruit.tooBitter = isChecked
-                //TODO update target
+                //TODO update target, new frequency -10 is new high value
             }
         }
 
         tooSoft.apply {
             setOnCheckedChangeListener {_, isChecked ->
                 fruit.tooSoft = isChecked
-                //TODO update target
+                //TODO update target, new frequency +10 is new low
             }
         }
 
         tooCrunchy.apply {
             setOnCheckedChangeListener {_, isChecked ->
                 fruit.tooCrunchy = isChecked
-                //TODO update target
+                //TODO update target, new frequency -10 is new high
             }
         }
 

@@ -8,4 +8,8 @@
     <string name="tooCrunchy_label">Too Crunchy</string>
     <string name="perfect_label">PERFECT!</string>
     <string name="back_label">BACK</string>
+
+    <string name="good_toast">Good Melon :) !</string>
+    <string name="bad_toast">Bad Melon :( !</string>
+    <string name="still_recording_toast">Still Recording...</string>
 </resources>

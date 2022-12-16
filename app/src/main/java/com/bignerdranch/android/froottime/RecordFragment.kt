@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class RecordFragment : Fragment() {
@@ -38,11 +39,35 @@ class RecordFragment : Fragment() {
 
         recordButton.setOnClickListener{
             //TODO what happens when hit record???
-            //after get set frequency, stop that, toast to screen like in the quiz (good!, bad!, still recording...)
+            //TODO this is where you hookup the microphone
+            //TODO when get frequency, set fruit frequency to read value: once set, print set to screen, return to FruitFragment
+            //TODO unblock loop below
+            /*
+            while (dont good frequency reading) {
+                Toast.makeText(this,
+                    R.string.still_recording_toast,
+                    Toast.LENGTH_LONG)
+                    .show()
+            }
+             */
+            //after get set frequency, stop recording
+            // toast to screen like in the quiz (good!, bad!, still recording...)
+            if (/*TODO UPDATE CONDITION*/ true) { // frequency is in some good range{
+                Toast.makeText(this,
+                    R.string.good_toast,
+                    Toast.LENGTH_SHORT)
+                    .show()
+            }
+            else {
+                Toast.makeText(
+                    this,
+                    R.string.bad_toast,
+                    Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
     }
-    //TODO this is where you hookup the microphone
-    //TODO when get frequency, set fruit frequency to read value: once set, print set to screen, return to FruitFragment
+
 
     companion object {
         fun newInstance(): RecordFragment {

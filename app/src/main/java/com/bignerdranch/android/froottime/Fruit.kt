@@ -1,7 +1,8 @@
 package com.bignerdranch.android.froottime
 
+import androidx.room.Entity
 import java.util.*
-
+@Entity
 data class Fruit(val id: UUID = UUID.randomUUID(),
                  var frequency: Int = 0,
                  var tooSweet: Boolean = false,
