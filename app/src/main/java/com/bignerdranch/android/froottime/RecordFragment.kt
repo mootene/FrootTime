@@ -8,13 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.NumberPicker
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class RecordFragment : Fragment() {
 
-    private lateinit var recordButton: EditText
     private lateinit var backButton: Button
+    private lateinit var numberPickr: NumberPicker
 
     private lateinit var fruit: Fruit
 
@@ -25,14 +26,22 @@ class RecordFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_record, container, false)
         fruit = Fruit()
-        recordButton = view.findViewById(R.id.record_button)
+        numberPickr = view.findViewById(R.id.number_picker)
         backButton = view.findViewById(R.id.back_button)
+
+        numberPickr.minValue = 1000
+        numberPickr.maxValue = 1600
+
         return view
     }
+
     override fun onStart() {
         super.onStart()
 
         backButton.setOnClickListener{
+            val current = numberPickr.getValue()
+
+
             val fragment = FruitFragment.newInstance()
             val fm = activity?.supportFragmentManager
             if (fm != null) {
@@ -42,7 +51,7 @@ class RecordFragment : Fragment() {
             }
         }
 
-        val textWatcher = object : TextWatcher {
+        /*val textWatcher = object : TextWatcher {
             override fun onTextChanged(sequence: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 //TODO update database current value
                 fruit.frequency = sequence.toString().toInt()
@@ -54,8 +63,9 @@ class RecordFragment : Fragment() {
             override fun afterTextChanged(p0: Editable?) {
             }
         }
-        recordButton.addTextChangedListener(textWatcher)
+        recordButton.addTextChangedListener(textWatcher)*/
     }
+
 
 
     companion object {

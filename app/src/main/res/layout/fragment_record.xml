@@ -3,20 +3,30 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:padding="8dp">
+    android:gravity="center"
+
+    android:padding="16dp">
 
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingBottom="8dp"
         android:text="@string/back_label"/>
-    <EditText
-        android:id="@+id/record_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Frequency Value"/>
 
+    <TextView
+        android:paddingVertical="16dp"
+        android:paddingTop="64dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select frequency from range"/>
+
+    <NumberPicker
+        android:id="@+id/number_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" />
 </LinearLayout>

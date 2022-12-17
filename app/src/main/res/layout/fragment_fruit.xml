@@ -7,6 +7,12 @@
     android:gravity="center"
     android:layout_margin="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Welcome to FrootTime!\n \nTo review the most recent recording, click review!\nTo record a new fruit, click record!"
+        android:textSize="20sp" />
     <Button
         android:id="@+id/record_fruit"
         android:layout_width="match_parent"
