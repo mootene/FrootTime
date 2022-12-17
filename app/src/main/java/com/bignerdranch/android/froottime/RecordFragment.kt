@@ -52,7 +52,7 @@ class RecordFragment : Fragment() {
              */
             //after get set frequency, stop recording
             // toast to screen like in the quiz (good!, bad!, still recording...)
-            if (/*TODO UPDATE CONDITION*/ true) { // frequency is in some good range{
+            if (/*TODO UPDATE CONDITION*/ false) { // frequency is in some good range{
                 Toast.makeText(this,
                     R.string.good_toast,
                     Toast.LENGTH_SHORT)

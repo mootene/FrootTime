@@ -14,6 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 private const val TAG = "REVIEW FRAGMENT"
 class ReviewFragment : Fragment() {
+    private val frequencyRepository = FrequencyRepository.get()
+    val frequencyListLiveData = frequencyRepository.getFrequencies()
+
+
+
     private lateinit var fruit: Fruit
 
     private lateinit var tooSweet: CheckBox
