@@ -43,6 +43,7 @@ class FruitFragment : Fragment() {
         }
 
         reviewButton.apply {
+            //TODO if current != -1 complete action below
             isEnabled = true
         }
 
