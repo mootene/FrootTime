@@ -42,6 +42,7 @@ class ReviewFragment : Fragment() {
 
         backButton = view.findViewById(R.id.back_button)
 
+        fruit = Fruit()
         return view
     }
 
@@ -75,6 +76,11 @@ class ReviewFragment : Fragment() {
                 fruit.tooCrunchy = isChecked
                 //TODO update target, new frequency -10 is new high
             }
+        }
+
+        perfect.apply {
+            if (tooBitter.isChecked || tooCrunchy.isChecked || tooSoft.isChecked || tooSweet.isChecked)
+                perfect.isEnabled = false
         }
 
         backButton.setOnClickListener{
