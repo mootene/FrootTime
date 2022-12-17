@@ -1,17 +1,22 @@
 package com.bignerdranch.android.froottime
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class RecordFragment : Fragment() {
 
-    private lateinit var recordButton: Button
+    private lateinit var recordButton: EditText
     private lateinit var backButton: Button
+
+    private lateinit var fruit: Fruit
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,7 +24,7 @@ class RecordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_record, container, false)
-
+        fruit = Fruit()
         recordButton = view.findViewById(R.id.record_button)
         backButton = view.findViewById(R.id.back_button)
         return view
@@ -37,35 +42,19 @@ class RecordFragment : Fragment() {
             }
         }
 
-        recordButton.setOnClickListener{
-            //TODO what happens when hit record???
-            //TODO this is where you hookup the microphone
-            //TODO when get frequency, set fruit frequency to read value: once set, print set to screen, return to FruitFragment
-            //TODO unblock loop below
-            /*
-            while (dont good frequency reading) {
-                Toast.makeText(this,
-                    R.string.still_recording_toast,
-                    Toast.LENGTH_LONG)
-                    .show()
+        val textWatcher = object : TextWatcher {
+            override fun onTextChanged(sequence: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                //TODO update database current value
+                fruit.frequency = sequence.toString().toInt()
             }
-             */
-            //after get set frequency, stop recording
-            // toast to screen like in the quiz (good!, bad!, still recording...)
-            if (/*TODO UPDATE CONDITION*/ false) { // frequency is in some good range{
-                Toast.makeText(this,
-                    R.string.good_toast,
-                    Toast.LENGTH_SHORT)
-                    .show()
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
-            else {
-                Toast.makeText(
-                    this,
-                    R.string.bad_toast,
-                    Toast.LENGTH_SHORT)
-                    .show()
+
+            override fun afterTextChanged(p0: Editable?) {
             }
         }
+        recordButton.addTextChangedListener(textWatcher)
     }
 
 
