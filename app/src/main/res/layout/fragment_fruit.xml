@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -8,10 +9,23 @@
     android:layout_margin="16dp">
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to..."
+        android:textSize="25sp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="291dp"
+        app:srcCompat="@drawable/froot_time" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Welcome to FrootTime!\n \nTo review the most recent recording, click review!\nTo record a new fruit, click record!"
+        android:text="To review the most recent recording, click review!\nTo record a new fruit: Click Record!"
         android:textSize="20sp" />
     <Button
         android:id="@+id/record_fruit"
